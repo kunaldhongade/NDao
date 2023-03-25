@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "create-react-app": "^5.0.1"
+  },
+  "name": "daofinalstarter",
+  "version": "1.0.0",
+  "description": "Dao Project",
+  "main": "index.js",
+  "repository": "https://github.com/kunaldhongade/NDao.git",
+  "author": "Kunal Dhongade",
+  "license": "MIT"
+}
