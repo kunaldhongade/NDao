@@ -11,7 +11,7 @@ function App() {
     contract: null,
   });
   const [account, setAccount] = useState("Not connected");
-  const [balance,setBalance]= useState(0)
+  const [balance, setBalance] = useState(0)
   useEffect(() => {
     async function init() {
       const provider = new Web3.providers.HttpProvider("HTTP://127.0.0.1:7545");
@@ -19,10 +19,10 @@ function App() {
       const networkId = await web3.eth.net.getId();
       const deployedNetwork = DAO.networks[networkId];
       const contract = new web3.eth.Contract(
-       DAO.abi,
+        DAO.abi,
         deployedNetwork.address
       );
-     
+
       setState({ web3: web3, contract: contract });
     }
     init();
@@ -54,14 +54,14 @@ function App() {
       setAccount(selectedAccountAddress);
     }
   };
-  
-//code for account balance
+
+  //code for account balance
   return (
     <div className="App">
-   <h1>Decentralize Autonoumous Organization</h1>
-   <p className="font">Connected Account: {account}</p>
-   <p className="font">Available Funds: {balance} ETH</p>
-   <form className="label0" id="myForm">
+      <h1>Decentralize Autonoumous Organization</h1>
+      <p className="font">Connected Account: {account}</p>
+      <p className="font">Available Funds: {balance} ETH</p>
+      <form className="label0" id="myForm">
         <label htmlFor=""></label>
         <select className="innerBox" id="selectNumber" onChange={selectAccount}>
           <option align="center">Choose an account</option>
@@ -70,8 +70,8 @@ function App() {
       <p className="font">For Manager</p>
       <Manager state={state} account={account}></Manager>
       <p className="font">For Investors</p>
-     <Investors state={state} account={account}></Investors>
-    
+      <Investors state={state} account={account}></Investors>
+
     </div>
   );
 }
